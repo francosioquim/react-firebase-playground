@@ -45,7 +45,7 @@
     "prettier-eslint": "^8.7.4",
     "react-app-rewired": "^1.4.0"
   },
-  "homepage": "https://github.com/Roamltd/crab-cake-entree",
+  "homepage": "http://roamltd.github.io/crab-cake-entree",
   "babel": {
     "presets": ["react-app"]
   },
