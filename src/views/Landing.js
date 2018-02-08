@@ -1,6 +1,11 @@
+import * as uiActions from '../actions/uiActions'
+
+import Header from './Header'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Typography from 'material-ui/Typography'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 import {withStyles} from 'material-ui/styles'
 
 const styles = () => ({
@@ -20,11 +25,16 @@ const styles = () => ({
 })
 
 class Landing extends React.Component {
+  componentWillMount() {
+    this.props.actions.updateHeaderTitle('Crab Cake')
+  }
+
   render() {
     const {classes} = this.props
 
-    return (
-      <div className={classes.root}>
+    return [
+      <Header key="header" />,
+      <div key="content" className={classes.root}>
         <Typography variant="title" align="center">
           A ReactJS Seed Project
         </Typography>
@@ -67,15 +77,35 @@ class Landing extends React.Component {
             </ul>
           </div>
         </div>
-      </div>
-    )
+      </div>,
+    ]
   }
 }
 
 Landing.displayName = 'Landing'
 
-Landing.propTypes = {
-  classes: PropTypes.object.isRequired,
+Landing.defaultProps = {
+  actions: {},
 }
 
-export default withStyles(styles)(Landing)
+Landing.propTypes = {
+  classes: PropTypes.object.isRequired,
+  actions: PropTypes.object,
+}
+
+function mapStateToProps(state) {
+  return {
+    ...state,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  const actions = {...uiActions}
+  const actionMap = bindActionCreators(actions, dispatch)
+  return {
+    actions: actionMap,
+  }
+}
+
+const styledLanding = withStyles(styles)(Landing)
+export default connect(mapStateToProps, mapDispatchToProps)(styledLanding)

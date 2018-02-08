@@ -7,9 +7,11 @@ body {
 html {
   box-sizing: border-box
 }
+
 body {
-  font-family: 'Alegreya Sans', sans-serif
+  font-family: 'Nunito', sans-serif
 }
+
 *,
 *:before,
 *:after {
@@ -18,4 +20,4 @@ body {
 
 [hidden] {
   display: none !important
-} 
+}  

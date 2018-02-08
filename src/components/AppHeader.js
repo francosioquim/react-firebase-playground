@@ -8,22 +8,24 @@ import Toolbar from 'material-ui/Toolbar'
 import Typography from 'material-ui/Typography'
 import {withStyles} from 'material-ui/styles'
 
-const styles = {
+const styles = theme => ({
   root: {
     width: '100%',
   },
-  flex: {
+  title: {
     flex: 1,
+    color: theme.palette.getContrastText(theme.palette.primary[500]),
+    fontSize: '1.4rem',
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
   },
-}
+})
 
 class AppHeader extends React.Component {
   render() {
-    const {classes} = this.props
+    const {classes, showLogin, title} = this.props
 
     return (
       <div className={classes.root}>
@@ -31,18 +33,14 @@ class AppHeader extends React.Component {
           <Toolbar>
             <IconButton
               className={classes.menuButton}
-              color="contrast"
+              color="secondary"
               aria-label="Menu">
               <MenuIcon />
             </IconButton>
-            <Typography
-              variant="title"
-              color="inherit"
-              className={classes.flex}
-              align="center">
-              Crab Cake
+            <Typography type="title" align="center" className={classes.title}>
+              {title || ''}
             </Typography>
-            <Button color="contrast">Login</Button>
+            {showLogin && <Button color="secondary">Login</Button>}
           </Toolbar>
         </AppBar>
       </div>
@@ -50,8 +48,15 @@ class AppHeader extends React.Component {
   }
 }
 
+AppHeader.defaultProps = {
+  title: '',
+  showLogin: true,
+}
+
 AppHeader.propTypes = {
   classes: PropTypes.object.isRequired,
+  title: PropTypes.string,
+  showLogin: PropTypes.bool,
 }
 
 AppHeader.displayName = 'AppHeader'
