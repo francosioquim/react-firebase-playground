@@ -1,9 +1,9 @@
 /* tslint:disable:no-any */
-import {applyMiddleware, compose, createStore} from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import { applyMiddleware, compose, createStore } from 'redux'
+import reduxImmutableStateInvariant from 'redux-immutable-state-invariant'
 
 import reducers from '../reducers'
-import reduxImmutableStateInvariant from 'redux-immutable-state-invariant'
-import thunkMiddleware from 'redux-thunk'
 
 export default function configureStore(initialState) {
   const middlewares = [
@@ -20,7 +20,7 @@ export default function configureStore(initialState) {
 
   const store = createStore(
     reducers,
-    {...(initialState || {})},
+    { ...(initialState || {}) },
     composeEnhancers(applyMiddleware(...middlewares)),
   )
 

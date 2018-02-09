@@ -1,12 +1,13 @@
-import * as uiActions from '../actions/uiActions'
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { bindActionCreators } from 'redux'
+import Typography from 'material-ui/Typography'
+import { withStyles } from 'material-ui/styles'
 
 import Header from './Header'
-import PropTypes from 'prop-types'
-import React from 'react'
-import Typography from 'material-ui/Typography'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
-import {withStyles} from 'material-ui/styles'
+import * as uiActions from '../actions/uiActions'
 
 const styles = () => ({
   root: {
@@ -30,7 +31,7 @@ class Landing extends React.Component {
   }
 
   render() {
-    const {classes} = this.props
+    const { classes } = this.props
 
     return [
       <Header key="header" />,
@@ -44,6 +45,11 @@ class Landing extends React.Component {
           </Typography>
           <div>
             <ul className={classes.list}>
+              <li>
+                <Link to="/something" href="/something">
+                  Client routing
+                </Link>
+              </li>
               <li>
                 <a href="https://github.com/timarney/react-app-rewired">
                   React App Rewired
@@ -100,7 +106,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  const actions = {...uiActions}
+  const actions = { ...uiActions }
   const actionMap = bindActionCreators(actions, dispatch)
   return {
     actions: actionMap,
