@@ -36,54 +36,62 @@ class Landing extends React.Component {
   render() {
     const {classes} = this.props
 
-    return [ < Header key = "header" />, < div key = "content" className = {
-        classes.root
-      } > <Typography variant="title" align="center">
-        A ReactJS Seed Project
-      </Typography> < div > <Typography variant="headline" align="left">
-        {"What's inside?"}
-      </Typography> < div > <ul className={classes.list}>
-        <li>
-          <Link to="/something" href="/something">
-            Client routing
-          </Link>
-        </li>
-        <li>
-          <a href="https://github.com/timarney/react-app-rewired">
-            React App Rewired
-          </a>: Tweak the create-react-app webpack config(s) without using{' '} {"'eject'"}
-          and without creating a fork of the react-scripts
-        </li>
-        <li>
-          <a href="https://github.com/mui-org/material-ui">
-            Material-UI v1
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/facebook/react">React 16</a>
-        </li>
-        <li>
-          <a href="https://github.com/reactjs/redux">Redux</a>
-        </li>
-        <li>
-          <a href="https://github.com/ReactTraining/react-router">
-            React Router
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/webpack/webpack">Webpack 3</a>
-        </li>
-        <li>
-          <a href="https://github.com/marcelmokos/eslint-config-with-prettier">
-            Prettier
-          </a>
-        </li>
-      </ul> < /div>
-        </div > </div>
-    ]
+    return (
+      <div>
+        <Header key="header"/>
+        <div key="content" className={classes.root}>
+          <Typography variant="title" align="center">
+            A ReactJS Seed Project
+          </Typography>
+          <div>
+            <Typography variant="headline" align="left">
+              {"What's inside?"}
+            </Typography>
+            <div>
+              <ul className={classes.list}>
+                <li>
+                  <Link to="/something" href="/something">
+                    Client routing
+                  </Link>
+                </li>
+                <li>
+                  <a href="https://github.com/timarney/react-app-rewired">
+                    React App Rewired
+                  </a>: Tweak the create-react-app webpack config(s) without using{' '} {"'eject'"}
+                  and without creating a fork of the react-scripts
+                </li>
+                <li>
+                  <a href="https://github.com/mui-org/material-ui">
+                    Material-UI v1
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/facebook/react">React 16</a>
+                </li>
+                <li>
+                  <a href="https://github.com/reactjs/redux">Redux</a>
+                </li>
+                <li>
+                  <a href="https://github.com/ReactTraining/react-router">
+                    React Router
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/webpack/webpack">Webpack 3</a>
+                </li>
+                <li>
+                  <a href="https://github.com/marcelmokos/eslint-config-with-prettier">
+                    Prettier
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 }
-
 Landing.displayName = 'Landing'
 
 Landing.defaultProps = {
@@ -108,6 +116,3 @@ function mapDispatchToProps(dispatch) {
   const actionMap = bindActionCreators(actions, dispatch)
   return {actions: actionMap}
 }
-
-const styledLanding = withStyles(styles)(Landing)
-export default connect(mapStateToProps, mapDispatchToProps)(styledLanding)
