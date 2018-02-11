@@ -1,12 +1,13 @@
-import AppHeader from '../components/AppHeader'
-import PropTypes from 'prop-types'
 import React from 'react'
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
+import AppHeader from '../components/AppHeader'
 
 class Header extends React.Component {
   render() {
-    const {showLogin, title} = this.props
+    const { showLogin, title } = this.props
 
     return <AppHeader showLogin={showLogin} title={title} />
   }

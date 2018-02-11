@@ -1,18 +1,24 @@
-import React, {Component} from 'react'
-import {Route, BrowserRouter as Router} from 'react-router-dom'
+import React, { Component } from 'react'
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
+
+import Reboot from 'material-ui/Reboot'
 
 import Landing from './views/Landing'
+import Something from './views/Something'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Router>
+        <Reboot />
+        <BrowserRouter>
           <div>
-            <Route path="/" component={Landing} />
-            <Route path="/landing" component={Landing} />
+            <Switch>
+              <Route exact path="/" component={Landing} />
+              <Route exact path="/something" component={Something} />
+            </Switch>
           </div>
-        </Router>
+        </BrowserRouter>
       </div>
     )
   }

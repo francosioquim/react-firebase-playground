@@ -1,7 +1,5 @@
-import amber from 'material-ui/colors/amber'
-import {createMuiTheme} from 'material-ui/styles'
-import grey from 'material-ui/colors/grey'
-import indigo from 'material-ui/colors/indigo'
+import { createMuiTheme } from 'material-ui/styles'
+import { grey, indigo, amber } from 'material-ui/colors'
 
 const fontWeightSemiBold = 700
 const fontWeightRegular = 500

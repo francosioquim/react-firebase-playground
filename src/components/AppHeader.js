@@ -1,12 +1,13 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+
 import AppBar from 'material-ui/AppBar'
 import Button from 'material-ui/Button'
-import IconButton from 'material-ui/IconButton'
-import MenuIcon from 'material-ui-icons/Menu'
-import PropTypes from 'prop-types'
-import React from 'react'
 import Toolbar from 'material-ui/Toolbar'
+import MenuIcon from 'material-ui-icons/Menu'
+import IconButton from 'material-ui/IconButton'
 import Typography from 'material-ui/Typography'
-import {withStyles} from 'material-ui/styles'
+import { withStyles } from 'material-ui/styles'
 
 const styles = theme => ({
   root: {
@@ -25,7 +26,7 @@ const styles = theme => ({
 
 class AppHeader extends React.Component {
   render() {
-    const {classes, showLogin, title} = this.props
+    const { classes, showLogin, title } = this.props
 
     return (
       <div className={classes.root}>
