@@ -1,5 +1,13 @@
 {
-  "extends": ["standard", "airbnb", "plugin:prettier/recommended", "plugin:react/recommended", "prettier", "prettier/react", "prettier/standard"],
+  "extends": [
+    "standard",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
   "plugins": ["react", "prettier", "standard"],
   "parserOptions": {
     "sourceType": "module",
@@ -71,7 +79,7 @@
     "react/jsx-closing-bracket-location": [
       "warn",
       {
-        "selfClosing": "props-aligned",
+        "selfClosing": "tag-aligned",
         "nonEmpty": "after-props"
       }
     ],
