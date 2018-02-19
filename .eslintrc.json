@@ -36,7 +36,6 @@
     "import/extensions": 0,
     "jsx-a11y/img-redundant-alt": 0,
     "arrow-body-style": ["off", "as-needed"],
-    "arrow-parens": ["error"],
     "class-methods-use-this": ["warn"],
     "comma-dangle": ["off"],
     "import/first": ["off"],
