@@ -1,5 +1,7 @@
 # Crab Cake Entree
 
+### Getting Started
+Follow this [guide](https://app.tettra.co/teams/roamltd/pages/how-to-create-a-new-fe-project) on Tettra
 
 ### Usage
 
