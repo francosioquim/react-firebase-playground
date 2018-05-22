@@ -1,6 +1,15 @@
 {
-  "extends": ["standard", "airbnb", "plugin:prettier/recommended", "plugin:react/recommended", "prettier", "prettier/react", "prettier/standard"],
+  "extends": [
+    "standard",
+    "airbnb",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/standard"
+  ],
   "plugins": ["react", "prettier", "standard"],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -27,7 +36,6 @@
     "import/extensions": 0,
     "jsx-a11y/img-redundant-alt": 0,
     "arrow-body-style": ["off", "as-needed"],
-    "arrow-parens": ["error"],
     "class-methods-use-this": ["warn"],
     "comma-dangle": ["off"],
     "import/first": ["off"],
@@ -73,7 +81,7 @@
     "react/jsx-closing-bracket-location": [
       "warn",
       {
-        "selfClosing": "props-aligned",
+        "selfClosing": "tag-aligned",
         "nonEmpty": "after-props"
       }
     ],
