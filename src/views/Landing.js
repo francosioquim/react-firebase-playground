@@ -4,10 +4,10 @@ import Header from './Header'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Typography from 'material-ui/Typography'
+import Typography from 'cake-ui-v1/Typography'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { withStyles } from 'material-ui/styles'
+import { withStyles } from 'cake-ui-v1/styles'
 
 const styles = () => ({
   root: {

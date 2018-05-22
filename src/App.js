@@ -2,14 +2,14 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import React, { Component } from 'react'
 
 import Landing from './views/Landing'
-import Reboot from 'material-ui/Reboot'
+import CssBaseline from 'cake-ui-v1/CssBaseline'
 import Something from './views/Something'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Reboot />
+        <CssBaseline />
         <BrowserRouter>
           <div>
             <Switch>

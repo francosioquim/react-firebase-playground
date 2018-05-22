@@ -1,5 +1,5 @@
-import { createMuiTheme } from 'material-ui/styles'
-import { grey, indigo, amber } from 'material-ui/colors'
+import { createMuiTheme } from 'cake-ui-v1/styles'
+import { grey, indigo, amber } from 'cake-ui-v1/colors'
 
 const fontWeightSemiBold = 700
 const fontWeightRegular = 500

@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import AppBar from 'material-ui/AppBar'
-import Button from 'material-ui/Button'
-import Toolbar from 'material-ui/Toolbar'
+import AppBar from 'cake-ui-v1/AppBar'
+import Button from 'cake-ui-v1/Button'
+import Toolbar from 'cake-ui-v1/Toolbar'
 import MenuIcon from 'material-ui-icons/Menu'
-import IconButton from 'material-ui/IconButton'
-import Typography from 'material-ui/Typography'
-import { withStyles } from 'material-ui/styles'
+import IconButton from 'cake-ui-v1/IconButton'
+import Typography from 'cake-ui-v1/Typography'
+import { withStyles } from 'cake-ui-v1/styles'
 
 const styles = theme => ({
   root: {

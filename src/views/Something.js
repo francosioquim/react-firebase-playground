@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import Typography from 'material-ui/Typography'
-import { withStyles } from 'material-ui/styles'
+import Typography from 'cake-ui-v1/Typography'
+import { withStyles } from 'cake-ui-v1/styles'
 
 import Header from './Header'
 
