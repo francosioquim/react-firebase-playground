@@ -6,7 +6,8 @@ module.exports = function override(config, env) {
   updatedConfig.resolve = {
     alias: {
       'cake-ui-v1': '@roam/cake-ui-v1',
-    },
+      'cake-ui-v1-icons': '@roam/cake-ui-v1-icons'
+    }
   }
 
   const configWithESLint = rewireEslint(updatedConfig, env)
