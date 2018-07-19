@@ -29,23 +29,23 @@
     "typeface-nunito": "0.0.44"
   },
   "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.15.0",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-prettier": "^2.5.0",
-    "eslint-plugin-promise": "^3.6.0",
-    "eslint-plugin-react": "^7.6.1",
-    "eslint-plugin-standard": "^3.1.0",
-    "gh-pages": "^1.1.0",
-    "prettier": "^1.10.2",
-    "prettier-eslint": "^8.7.4",
-    "react-app-rewire-eslint": "^0.2.3",
-    "react-app-rewired": "^1.5.2"
+    "babel-eslint": "7.2.3",
+    "eslint": "4.15.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-config-standard": "11.0.0-beta.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.2",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-prettier": "2.5.0",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-react": "7.6.1",
+    "eslint-plugin-standard": "3.1.0",
+    "gh-pages": "1.1.0",
+    "prettier": "1.10.2",
+    "prettier-eslint": "8.7.4",
+    "react-app-rewire-eslint": "0.2.3",
+    "react-app-rewired": "1.5.2"
   },
   "homepage": "http://roamltd.github.io/crab-cake-entree",
   "babel": {
@@ -55,5 +55,6 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  }
+  },
+   "engines" : { "node" : ">8.9" }
 }
