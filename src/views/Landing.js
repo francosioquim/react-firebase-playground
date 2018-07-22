@@ -1,4 +1,4 @@
-import * as uiActions from '../actions/uiActions'
+import * as uiActions from 'actions/uiActions'
 
 import Header from './Header'
 import { Link } from 'react-router-dom'

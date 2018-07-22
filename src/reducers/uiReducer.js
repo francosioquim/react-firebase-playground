@@ -1,4 +1,4 @@
-import * as constants from '../constants/actions'
+import * as constants from 'constants/actions'
 
 import initialState from './initialState'
 
