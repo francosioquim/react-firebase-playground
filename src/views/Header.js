@@ -1,9 +1,8 @@
-import React from 'react'
+import AppHeader from 'components/AppHeader'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import React from 'react'
 import { bindActionCreators } from 'redux'
-
-import AppHeader from '../components/AppHeader'
+import { connect } from 'react-redux'
 
 class Header extends React.Component {
   render() {

@@ -1,14 +1,12 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-
-import Typography from 'cake-ui-v1/Typography'
-import { withStyles } from 'cake-ui-v1/styles'
+import * as uiActions from 'actions/uiActions'
 
 import Header from './Header'
-
-import * as uiActions from '../actions/uiActions'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Typography from 'cake-ui-v1/Typography'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import { withStyles } from 'cake-ui-v1/styles'
 
 const styles = () => ({
   root: {
