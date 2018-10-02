@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "*.js": "javascriptreact"
+    },
+    "editor.formatOnSave": true,
+    "prettier.semi": false,
+    "prettier.trailingComma": "es5",
+    "prettier.useTabs": false,
+    "prettier.spaceBeforeFunctionParen": false,
+    "prettier.arrayExpand": true,
+    "prettier.arrowParens": "always",
+    "prettier.tabWidth": 4
+}

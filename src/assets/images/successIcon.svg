@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="76px" height="76px" viewBox="0 0 76 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>FAB / Standard / Circular / Primary Color / Focused</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="56" height="56" rx="28"></rect>
+        <filter x="-43.8%" y="-31.2%" width="187.5%" height="187.5%" filterUnits="objectBoundingBox" id="filter-3">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feOffset dx="0" dy="4" in="SourceAlpha" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter3"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter3" result="shadowBlurOuter3"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter3"></feMergeNode>
+            </feMerge>
+        </filter>
+        <polygon id="path-4" points="8.96233769 16.1341471 4.41727087 11.6657349 2.875 13.1819947 8.96233769 19.1666667 22.0416667 6.30792645 20.4993958 4.79166667"></polygon>
+    </defs>
+    <g id="Templates" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1.2-Reset-password-success" transform="translate(-475.000000, -394.000000)">
+            <g id="Button-/-FAB-/-Filled" transform="translate(485.000000, 403.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Surface">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                    <use fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="↳-Tonal-Palette" stroke-width="1" fill-rule="evenodd" mask="url(#mask-2)">
+                    <g transform="translate(-1.000000, 0.000000)" id="✱-/-Color-/-Success">
+                        <g>
+                            <rect id="Rectangle-13" fill="#04CB94" x="0" y="0" width="57" height="57"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Icon-/-Done" mask="url(#mask-2)">
+                    <g transform="translate(16.000000, 16.000000)">
+                        <mask id="mask-5" fill="white">
+                            <use xlink:href="#path-4"></use>
+                        </mask>
+                        <g id="Mask" stroke="none" fill="none" fill-rule="nonzero"></g>
+                        <g id="↳-Icon-Color" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" mask="url(#mask-5)">
+                            <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="22.0416667" height="22.0416667"></rect>
+                            <g id="✱-/-Color-/-White" fill="#FFFFFF">
+                                <rect id="Rectangle-13" x="0" y="0" width="23" height="23"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

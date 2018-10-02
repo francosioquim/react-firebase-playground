@@ -1,25 +1,31 @@
-import React from 'react'
-import 'typeface-nunito'
-import ReactDOM from 'react-dom'
-import { Provider } from 'react-redux'
-import { MuiThemeProvider } from 'cake-ui-v1/styles'
-import injectTapEventPlugin from 'react-tap-event-plugin'
-
-import App from './App'
 import './styles/index.css'
-import theme from './styles/theme'
-import configureStore from './store/configureStore'
+import 'typeface-roboto'
 
-injectTapEventPlugin()
+import App from 'containers/App'
+import { AppContainer } from 'react-hot-loader'
+import JssProvider from 'react-jss/lib/JssProvider'
+import { MuiThemeProvider } from 'cake-ui-v1/styles'
+import { Provider } from 'react-redux'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import configureStore from './configureStore'
+import { create } from 'jss'
+import preset from 'jss-preset-default'
+import theme from 'styles/theme'
 
 const store = configureStore()
+const jss = create(preset())
 
 /* eslint no-undef: 0 */
 ReactDOM.render(
-  <Provider store={store}>
-    <MuiThemeProvider theme={theme}>
-      <App />
-    </MuiThemeProvider>
-  </Provider>,
-  document.getElementById('root'),
+    <AppContainer>
+        <Provider store={store}>
+            <JssProvider jss={jss}>
+                <MuiThemeProvider theme={theme}>
+                    <App />
+                </MuiThemeProvider>
+            </JssProvider>
+        </Provider>
+    </AppContainer>,
+    document.getElementById('root')
 )

@@ -1,0 +1,17 @@
+
+<svg width="35px" height="35px" viewBox="0 0 35 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <g id="Project" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.87">
+        <g id="Home-view-Copy" transform="translate(-57.000000, -51.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="Group" transform="translate(57.000000, 51.000000)">
+                <circle id="Oval" cx="2.5" cy="32.5" r="2.5"></circle>
+                <circle id="Oval-Copy-2" cx="2.5" cy="17.5" r="2.5"></circle>
+                <circle id="Oval-Copy" cx="17.5" cy="32.5" r="2.5"></circle>
+                <circle id="Oval-Copy-3" cx="17.5" cy="17.5" r="2.5"></circle>
+                <circle id="Oval-Copy-4" cx="17.5" cy="2.5" r="2.5"></circle>
+                <circle id="Oval-Copy-5" cx="32.5" cy="2.5" r="2.5"></circle>
+                <circle id="Oval-Copy-6" cx="32.5" cy="17.5" r="2.5"></circle>
+            </g>
+        </g>
+    </g>
+</svg>
