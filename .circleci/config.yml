@@ -14,7 +14,7 @@ install_js: &install_js
         name: Install js dependencies
         command: |
             yarn config set yarn-offline-mirror ~/.cache/npm-packages-offline-cache/v1
-            yarn
+            yarn install --production=false
 restore_yarn_cache: &restore_yarn_cache
     restore_cache:
         key: v1-yarn-sha-{{ checksum "yarn.lock" }}
@@ -48,7 +48,7 @@ jobs:
                       yarn cache dir
             - run:
                   name: Add registry
-                  command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+                  command: echo "//registry.runsonsauce.com:3000/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
             - *install_js
             - run:
                   name: Should not have any git not staged
@@ -130,9 +130,9 @@ jobs:
                   working_directory: /
                   command: sudo apt-get -y install awscli
             - *attach_root_workspace
-            - run:
-                  name: Deploy development build
-                  command: aws s3 sync build/ "s3://${DEV_BUCKET}" --delete --region ap-southeast-2
+            # - run:
+            #      name: Deploy development build
+            #      command: aws s3 sync build/ "s3://${DEV_BUCKET}" --delete --region ap-southeast-2
 
     deploy_production:
         <<: *defaults
@@ -142,9 +142,9 @@ jobs:
                   working_directory: /
                   command: sudo apt-get -y install awscli
             - *attach_root_workspace
-            - run:
-                  name: Upload Production Build
-                  command: aws s3 sync build/ "s3://${REPO_BUCKET}/${CIRCLE_TAG}-production/" --delete --region ap-southeast-2
+            # - run:
+            #      name: Upload Production Build
+            #      command: aws s3 sync build/ "s3://${REPO_BUCKET}/${CIRCLE_TAG}-production/" --delete --region ap-southeast-2
 
 workflows:
     version: 2
