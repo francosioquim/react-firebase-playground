@@ -46,9 +46,18 @@ jobs:
                       docker-compose --version
                       env
                       yarn cache dir
+            # - run:
+            #      name: Add registry
+            #      command: echo "//registry.runsonsauce.com:3000/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
+
             - run:
-                  name: Add registry
-                  command: echo "//registry.runsonsauce.com:3000/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
+                  name: Roll back npm to a version that can login...
+                  command: |
+                      sudo npm install -g npm@5.3.0
+                      npm -v
+            - run:
+                  name: Login to Roam NPM registry
+                  command: 'echo -e "$NPM_CONFIG_USER\n$NPM_CONFIG_PASS\n$NPM_CONFIG_EMAIL" | npm login --registry=http://registry.runsonsauce.com:3000 --scope=@roam'
             - *install_js
             - run:
                   name: Should not have any git not staged
@@ -173,6 +182,8 @@ workflows:
             - test_unit:
                   requires:
                       - checkout
+                      - build_dev
+                      - build_production
             - deploy_dev:
                   requires:
                       - checkout
