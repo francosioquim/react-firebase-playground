@@ -78,7 +78,7 @@ jobs:
             - *attach_root_workspace
             - run:
                   name: Build Dev
-                  command: npm run build:dev
+                  command: yarn build:dev
             - *persist_root_workspace
 
     build_production:
@@ -87,7 +87,7 @@ jobs:
             - *attach_root_workspace
             - run:
                   name: Build Production
-                  command: npm run build:prod
+                  command: yarn build:prod
             - run:
                   name: Tag Build
                   command: echo "${CIRCLE_TAG}-production" > build/version.txt
