@@ -2,7 +2,7 @@
 
 A Cake starter project on steroids!
 
-[![CircleCI](https://img.shields.io/circleci/project/github/Roamltd/crab-cake-entree/master.svg)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master)
+[![CircleCI](https://img.shields.io/circleci/project/github/Roamltd/crab-cake-entree/master.svg)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master?circle-token=d7214399ec2dfeb743c147be61216208f97eed01)
 
 ### Getting Started
 
