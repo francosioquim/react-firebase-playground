@@ -3,7 +3,7 @@ import React from 'react'
 import classNames from 'classnames'
 import injectSheet from 'react-jss'
 
-export const styles = (theme) => ({
+export const styles = () => ({
     root: {},
 })
 

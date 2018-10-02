@@ -14,6 +14,7 @@
     "prettier.bracketSpacing": false,
     "prettier.breakProperty": false,
     "prettier.noSpaceEmptyFn": false,
-    "prettier.openOutput": true,
-    "prettier.bracesSpacing": false
+    "prettier.openOutput": false,
+    "prettier.bracesSpacing": false,
+    "prettier.jsxBracketSameLine": false
 }
