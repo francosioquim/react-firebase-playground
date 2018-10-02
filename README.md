@@ -19,9 +19,24 @@ yarn && yarn start
 -   Uses [Formik](https://medium.com/@ilonacodes/why-formik-with-react-e640c1934d6) with asynchronous error handling and feedback
 -   [Prettier + Eslint](https://blog.gojekengineering.com/eslint-prettier-for-a-consistent-react-codebase-eaa673debb1d) for a consistent codebase
 
-### Architecture
+### Folder Structure
 
-### Structure
+    .
+    ├── ...
+    ├── src
+    │   ├── assets
+    │   ├── components
+    │   │       ├── atoms
+    │   │       ├── molecules
+    │   │       ├── organisms
+    │   │       └── templates
+    │   ├── constants
+    │   ├── containers
+    │   ├── modules
+    │   ├── styles
+    │   ├── utils
+    │   └── config.js
+    └── ...
 
 ### Deployment
 
