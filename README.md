@@ -2,6 +2,8 @@
 
 A Cake starter project on steroids!
 
+[![CircleCI](https://img.shields.io/circleci/project/github/Roamltd/crab-cake-entree/master.svg)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master)
+
 ### Getting Started
 
 ```sh
