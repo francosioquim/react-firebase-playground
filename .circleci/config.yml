@@ -157,7 +157,11 @@ workflows:
                   filters:
                       branches:
                           ignore: /.*/
-                          only: develop
+                          only:
+                              - develop
+                              - master
+                              - /feature.*/
+                              - /fix.*/
             - build_production:
                   requires:
                       - checkout
@@ -177,7 +181,11 @@ workflows:
                   filters:
                       branches:
                           ignore: /.*/
-                          only: develop
+                          only:
+                              - develop
+                              - master
+                              - /feature.*/
+                              - /fix.*/
             - deploy_production:
                   requires:
                       - checkout
@@ -188,4 +196,3 @@ workflows:
                           only: /^[A-Za-z]*.[0-9].[0-9]{1,3}$/
                       branches:
                           ignore: /.*/
-                          only: develop
