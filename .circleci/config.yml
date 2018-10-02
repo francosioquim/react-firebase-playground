@@ -62,9 +62,6 @@ jobs:
             - run:
                   name: Should not have any git not staged
                   command: git diff --exit-code
-            - run:
-                  name: Install
-                  command: npm install
             - save_cache:
                   key: v1-yarn-sha-{{ checksum "yarn.lock" }}
                   paths:
