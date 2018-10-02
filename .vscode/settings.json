@@ -9,5 +9,11 @@
     "prettier.spaceBeforeFunctionParen": false,
     "prettier.arrayExpand": true,
     "prettier.arrowParens": "always",
-    "prettier.tabWidth": 4
+    "prettier.tabWidth": 4,
+    "prettier.flattenTernaries": false,
+    "prettier.bracketSpacing": false,
+    "prettier.breakProperty": false,
+    "prettier.noSpaceEmptyFn": false,
+    "prettier.openOutput": true,
+    "prettier.bracesSpacing": false
 }

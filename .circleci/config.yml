@@ -124,9 +124,9 @@ jobs:
             - run:
                   name: Lint
                   command: yarn eslint-check
-            - run:
-                  name: Run tests
-                  command: yarn test
+            # - run:
+            #      name: Run tests
+            #      command: yarn test
 
     deploy_dev:
         <<: *defaults
