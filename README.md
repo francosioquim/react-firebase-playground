@@ -1,4 +1,5 @@
 # Crab Cake Entree
+[![CircleCI](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master.svg?style=svg&circle-token=d7214399ec2dfeb743c147be61216208f97eed01)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master)
 
 A Cake starter project on steroids!
 
