@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Typography from 'cake-ui-v1/Typography'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = () => ({
     root: {},

@@ -1,7 +1,7 @@
 import * as routeModule from 'modules/route'
 import * as userModule from 'modules/user'
 
-import { compose, withHandlers } from 'recompose'
+import { compose, pure, withHandlers } from 'recompose'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -9,10 +9,8 @@ import { connect } from 'react-redux'
 export default compose(
     connect(
         // mapStateToProps
-        (state) => {
-            return {
-                pathname: state.router.location.pathname,
-            }
+        () => {
+            return null
         },
         // mapDispatchToProps
         (dispatch) => {
@@ -28,11 +26,14 @@ export default compose(
     ),
     // Handlers
     withHandlers({
-        goTo: (props) => (route) => {
-            props.actions.redirect(`/${route}`)
+        goToGroups: (props) => () => {
+            props.actions.redirect('/groups')
+            props.onClose()
         },
-        onLogout: (props) => () => {
-            props.actions.logoutUser()
+        goToHome: (props) => () => {
+            props.actions.redirect('/home')
+            props.onClose()
         },
-    })
+    }),
+    pure
 )

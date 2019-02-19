@@ -2,7 +2,7 @@
     "files.associations": {
         "*.js": "javascriptreact"
     },
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "prettier.semi": false,
     "prettier.trailingComma": "es5",
     "prettier.useTabs": false,

@@ -1,9 +1,9 @@
-import Grid from 'cake-ui-v1/Grid'
+import Grid from '@material-ui/core/Grid'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Route } from 'react-router'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

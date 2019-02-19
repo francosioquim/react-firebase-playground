@@ -1,8 +1,8 @@
-import Avatar from 'cake-ui-v1/Avatar'
+import Avatar from '@material-ui/core/Avatar'
 import PropTypes from 'prop-types'
 import React from 'react'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

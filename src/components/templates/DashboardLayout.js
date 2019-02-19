@@ -1,69 +1,60 @@
-import AppHeader from 'containers/AppHeader'
-import Copyright from 'components/atoms/Copyright'
-import PageContent from 'cake-ui-v1/PageContent'
-import PageFooter from 'cake-ui-v1/PageFooter'
-import PageHeader from 'cake-ui-v1/PageHeader'
-import PageWrapper from 'cake-ui-v1/PageWrapper'
+import AppHeader from 'components/organisms/AppHeader'
+import CssBaseline from '@material-ui/core/CssBaseline'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Route } from 'react-router'
-import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import SidebarMenu from 'components/organisms/SidebarMenu'
+import { withStyles } from '@material-ui/core/styles'
 
-export const styles = (theme) => ({
-    root: {},
-    header: {
-        backgroundColor: theme.palette.background.light,
-        paddingTop: theme.spacing.lg,
-        paddingBottom: theme.spacing.md,
-        paddingLeft: theme.spacing.md,
-        paddingRight: theme.spacing.md,
+const styles = (theme) => ({
+    root: {
+        display: 'flex',
     },
+    appBarSpacer: theme.mixins.toolbar,
     content: {
-        backgroundColor: theme.palette.background.default,
-        paddingTop: theme.spacing.xl,
-        paddingBottom: theme.spacing.lg,
-        paddingLeft: theme.spacing.md,
-        paddingRight: theme.spacing.md,
-        width: '100%',
-        [theme.breakpoints.up('lg')]: {
-            paddingLeft: 0,
-            paddingRight: 0,
-        },
-    },
-    footer: {
-        backgroundColor: theme.palette.background,
-        paddingLeft: theme.spacing.md,
-        paddingRight: theme.spacing.md,
+        flexGrow: 1,
+        padding: theme.spacing.unit * 3,
+        height: '100vh',
+        overflow: 'auto',
     },
 })
 
-const DashboardLayout = ({ classes, component: Component, className: classNameProp, ...rest }) => {
-    const className = classNames(classes.root, classNameProp)
-    return (
-        <Route
-            {...rest}
-            render={(matchProps) => (
-                <PageWrapper maxWidth={1280} className={className}>
-                    <PageHeader className={classes.header}>
-                        <AppHeader />
-                    </PageHeader>
-                    <PageContent className={classes.content}>
-                        <Component {...matchProps} />
-                    </PageContent>
-                    <PageFooter className={classes.footer}>
-                        <Copyright />
-                    </PageFooter>
-                </PageWrapper>
-            )}
-        />
-    )
+class DashboardLayout extends React.Component {
+    state = {
+        open: false,
+    }
+
+    handleDrawerOpen = () => {
+        this.setState({ open: true })
+    }
+
+    handleDrawerClose = () => {
+        this.setState({ open: false })
+    }
+
+    render() {
+        const { classes, component: Component } = this.props
+        return (
+            <div className={classes.root}>
+                <CssBaseline />
+                <AppHeader onOpen={this.handleDrawerOpen} open={this.state.open} />
+                <SidebarMenu onClose={this.handleDrawerClose} open={this.state.open} />
+                <main className={classes.content}>
+                    <div className={classes.appBarSpacer} />
+                    <Route
+                        render={(matchProps) => {
+                            return <Component {...matchProps} />
+                        }}
+                    />
+                </main>
+            </div>
+        )
+    }
 }
 
 DashboardLayout.propTypes = {
     classes: PropTypes.object.isRequired,
     component: PropTypes.func,
-    className: PropTypes.string,
 }
 
 export default withStyles(styles)(DashboardLayout)

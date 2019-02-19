@@ -1,14 +1,13 @@
-import Button from 'cake-ui-v1/Button'
+import Button from '@material-ui/core/Button'
 import { FORM_ACTION_ERROR_STATUS } from 'constants/form'
-import FormControl from 'cake-ui-v1/FormControl'
-import FormHelperText from 'cake-ui-v1/FormHelperText'
+import FormControl from '@material-ui/core/FormControl'
+import FormHelperText from '@material-ui/core/FormHelperText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import RouterLink from 'cake-ui-v1/RouterLink'
-import TextField from 'cake-ui-v1/TextField'
-import Typography from 'cake-ui-v1/Typography'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {
@@ -78,7 +77,7 @@ const ResetForm = ({
                 </FormControl>
                 <FormControl className={classes.formControl} fullWidth>
                     <Typography>
-                        Wrong place? <RouterLink to="/login">Back to login</RouterLink>
+                        Wrong place? <div to="/login">Back to login</div>
                     </Typography>
                 </FormControl>
             </form>

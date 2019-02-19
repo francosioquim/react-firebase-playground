@@ -1,41 +1,109 @@
-import ArrowDropDown from 'cake-ui-v1-icons/ArrowDropDown'
-import Grid from 'cake-ui-v1/Grid'
-import HeaderNavigation from 'components/molecules/HeaderNavigation'
-import Logo from 'components/atoms/Logo'
-import Menu from 'cake-ui-v1/Menu'
-import MenuItem from 'cake-ui-v1/MenuItem'
+import AppBar from '@material-ui/core/AppBar'
+import Badge from '@material-ui/core/Badge'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import Divider from '@material-ui/core/Divider'
+import Drawer from '@material-ui/core/Drawer'
+import IconButton from '@material-ui/core/IconButton'
+import List from '@material-ui/core/List'
+import MenuIcon from '@material-ui/icons/Menu'
+import NotificationsIcon from '@material-ui/icons/Notifications'
 import PropTypes from 'prop-types'
 import React from 'react'
-import UserAvatar from 'components/molecules/UserAvatar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
+
+const drawerWidth = 240
 
 export const styles = (theme) => {
     return {
-        root: {},
-        navigation: {
-            marginTop: theme.spacing.md,
+        toolbar: {
+            paddingRight: 24, // keep right padding when drawer closed
         },
-        userAvatar: {
-            justifyContent: 'center',
+        toolbarIcon: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            padding: '0 8px',
+            ...theme.mixins.toolbar,
         },
-        logo: {
-            fontSize: theme.typography.pxToRem(24),
+        appBar: {
+            zIndex: theme.zIndex.drawer + 1,
+            transition: theme.transitions.create(['width', 'margin'], {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+        },
+        appBarShift: {
+            marginLeft: drawerWidth,
+            width: `calc(100% - ${drawerWidth}px)`,
+            transition: theme.transitions.create(['width', 'margin'], {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.enteringScreen,
+            }),
+        },
+        menuButton: {
+            marginLeft: 12,
+            marginRight: 36,
+        },
+        menuButtonHidden: {
+            display: 'none',
+        },
+        title: {
+            flexGrow: 1,
+        },
+        drawerPaper: {
+            position: 'relative',
+            whiteSpace: 'nowrap',
+            width: drawerWidth,
+            transition: theme.transitions.create('width', {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.enteringScreen,
+            }),
+        },
+        drawerPaperClose: {
+            overflowX: 'hidden',
+            transition: theme.transitions.create('width', {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+            width: theme.spacing.unit * 7,
+            [theme.breakpoints.up('sm')]: {
+                width: theme.spacing.unit * 9,
+            },
+        },
+        appBarSpacer: theme.mixins.toolbar,
+        content: {
+            flexGrow: 1,
+            padding: theme.spacing.unit * 3,
+            height: '100vh',
+            overflow: 'auto',
+        },
+        chartContainer: {
+            marginLeft: -22,
+        },
+        tableContainer: {
+            height: 320,
+        },
+        h5: {
+            marginBottom: theme.spacing.unit * 2,
         },
     }
 }
 
 class Header extends React.Component {
     state = {
-        anchorEl: null,
+        open: true,
     }
 
-    handleClick = (event) => {
-        this.setState({ anchorEl: event.currentTarget })
+    handleDrawerOpen = () => {
+        this.setState({ open: true })
     }
 
-    handleClose = () => {
-        this.setState({ anchorEl: null })
+    handleDrawerClose = () => {
+        this.setState({ open: false })
     }
 
     handleLogout = () => {
@@ -46,10 +114,66 @@ class Header extends React.Component {
     }
 
     render() {
-        const { anchorEl } = this.state
-        const { classes, className: classNameProp, onChange, pathname, tabItems } = this.props
-
-        const className = classNames(classes.root, classNameProp)
+        const { classes } = this.props
+        return (
+            <div className={classes.root}>
+                <CssBaseline />
+                <AppBar
+                    position="absolute"
+                    className={classNames(classes.appBar, this.state.open && classes.appBarShift)}
+                >
+                    <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
+                        <IconButton
+                            color="inherit"
+                            aria-label="Open drawer"
+                            onClick={this.handleDrawerOpen}
+                            className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                            Dashboard
+                        </Typography>
+                        <IconButton color="inherit">
+                            <Badge badgeContent={4} color="secondary">
+                                <NotificationsIcon />
+                            </Badge>
+                        </IconButton>
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    variant="body1"
+                    classes={{
+                        paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+                    }}
+                    open={this.state.open}
+                >
+                    <div className={classes.toolbarIcon}>
+                        <IconButton onClick={this.handleDrawerClose}>
+                            <ChevronLeftIcon />
+                        </IconButton>
+                    </div>
+                    <Divider />
+                    <List>a</List>
+                    <Divider />
+                    <List>b</List>
+                </Drawer>
+                <main className={classes.content}>
+                    <div className={classes.appBarSpacer} />
+                    <Typography variant="h4" gutterBottom component="h2">
+                        Orders
+                    </Typography>
+                    <Typography component="div" className={classes.chartContainer}>
+                        a
+                    </Typography>
+                    <Typography variant="h4" gutterBottom component="h2">
+                        Products
+                    </Typography>
+                    <div className={classes.tableContainer}>b</div>
+                </main>
+            </div>
+        )
+        /*
         return (
             <div className={className}>
                 <Grid alignItems="center" direction="row" justify="space-between" container>
@@ -81,6 +205,7 @@ class Header extends React.Component {
                 />
             </div>
         )
+        */
     }
 }
 

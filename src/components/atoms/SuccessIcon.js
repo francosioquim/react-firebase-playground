@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import classNames from 'classnames'
 import successIconImage from 'assets/images/successIcon.svg'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

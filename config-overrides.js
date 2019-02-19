@@ -13,10 +13,6 @@ const inProject = path.resolve.bind(path, project.basePath)
 module.exports = function override(config, env) {
     const updatedConfig = config
     updatedConfig.resolve = {
-        alias: {
-            'cake-ui-v1': '@roam/cake-ui-v1',
-            'cake-ui-v1-icons': '@roam/cake-ui-v1-icons',
-        },
         modules: [inProject(project.srcDir), 'node_modules'],
         extensions: ['*', '.js', '.jsx', '.json'],
     }

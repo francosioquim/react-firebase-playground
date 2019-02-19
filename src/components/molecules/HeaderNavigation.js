@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Tab from 'cake-ui-v1/Tab'
-import Tabs from 'cake-ui-v1/Tabs'
+import Tab from '@material-ui/core/Tab'
+import Tabs from '@material-ui/core/Tabs'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

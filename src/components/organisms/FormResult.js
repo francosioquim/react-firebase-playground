@@ -1,10 +1,10 @@
-import Button from 'cake-ui-v1/Button'
-import FormControl from 'cake-ui-v1/FormControl'
+import Button from '@material-ui/core/Button'
+import FormControl from '@material-ui/core/FormControl'
 import FormHeading from 'components/molecules/FormHeading'
 import PropTypes from 'prop-types'
 import React from 'react'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {},

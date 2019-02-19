@@ -2,7 +2,7 @@ import LoginForm from 'components/organisms/LoginForm'
 import Logo from 'components/atoms/Logo'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

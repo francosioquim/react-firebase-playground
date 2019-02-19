@@ -1,16 +1,15 @@
-import Button from 'cake-ui-v1/Button'
-import Checkbox from 'cake-ui-v1/Checkbox'
+import Button from '@material-ui/core/Button'
+import Checkbox from '@material-ui/core/Checkbox'
 import { FORM_ACTION_ERROR_STATUS } from 'constants/form'
-import FormControl from 'cake-ui-v1/FormControl'
-import FormControlLabel from 'cake-ui-v1/FormControlLabel'
-import FormHelperText from 'cake-ui-v1/FormHelperText'
+import FormControl from '@material-ui/core/FormControl'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormHelperText from '@material-ui/core/FormHelperText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import RouterLink from 'cake-ui-v1/RouterLink'
-import TextField from 'cake-ui-v1/TextField'
-import Typography from 'cake-ui-v1/Typography'
+import TextField from '@material-ui/core/TextField'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {
@@ -108,7 +107,7 @@ const LoginForm = ({
                 </FormControl>
                 <FormControl className={classes.formControl} fullWidth>
                     <Typography>
-                        <RouterLink to="/reset">Forgot password?</RouterLink>
+                        <div to="/reset">Forgot password?</div>
                     </Typography>
                 </FormControl>
             </form>

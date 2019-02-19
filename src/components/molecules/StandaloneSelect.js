@@ -1,9 +1,9 @@
-import KeyboardArrowDown from 'cake-ui-v1-icons/KeyboardArrowDown'
-import MenuItem from 'cake-ui-v1/MenuItem'
+import KeyboardArrowDown from '@material-ui/icons/KeyboardArrowDown'
+import MenuItem from '@material-ui/core/MenuItem'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Select from 'cake-ui-v1/Select'
-import Typography from 'cake-ui-v1/Typography'
+import Select from '@material-ui/core/Select'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
 import injectSheet from 'react-jss'
 

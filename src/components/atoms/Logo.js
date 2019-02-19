@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Typography from 'cake-ui-v1/Typography'
+import Typography from '@material-ui/core/Typography'
 import classNames from 'classnames'
 import logo from 'assets/images/logo.svg'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {
@@ -29,7 +29,7 @@ function Logo(props) {
     return (
         <div className={className}>
             <img src={logo} {...other} alt="Crab Cake" className={classes.logo} />
-            <Typography className={classes.title} variant="title" headlineMapping={{ title: 'span' }}>
+            <Typography className={classes.title} variant="h6" headlineMapping={{ title: 'span' }}>
                 Crab Cake
             </Typography>
         </div>

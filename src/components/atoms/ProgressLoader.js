@@ -1,4 +1,4 @@
-import CircularProgress from 'cake-ui-v1/CircularProgress'
+import CircularProgress from '@material-ui/core/CircularProgress'
 import PropTypes from 'prop-types'
 import React from 'react'
 import classNames from 'classnames'

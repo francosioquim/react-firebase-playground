@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import Typography from 'cake-ui-v1/Typography'
-import { withStyles } from 'cake-ui-v1/styles'
+import Typography from '@material-ui/core/Typography'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {
@@ -19,10 +19,10 @@ export const styles = (theme) => ({
 const PageNotFound = ({ classes }) => (
     <div className={classes.root}>
         <div className={classes.wrapper}>
-            <Typography className={classes.label} variant="title" component="p">
+            <Typography className={classes.label} variant="h1" component="p">
                 404
             </Typography>
-            <Typography variant="body" gutterBottom>
+            <Typography variant="body1" gutterBottom>
                 You
                 {"'"}
                 ve gone way too far

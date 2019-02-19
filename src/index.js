@@ -1,10 +1,12 @@
 import './styles/index.css'
 import 'typeface-roboto'
 
+import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles'
+
 import App from 'containers/App'
 import { AppContainer } from 'react-hot-loader'
+import { CssBaseline } from '@material-ui/core'
 import JssProvider from 'react-jss/lib/JssProvider'
-import { MuiThemeProvider } from 'cake-ui-v1/styles'
 import { Provider } from 'react-redux'
 import React from 'react'
 import ReactDOM from 'react-dom'
@@ -16,12 +18,15 @@ import theme from 'styles/theme'
 const store = configureStore()
 const jss = create(preset())
 
+const generateClassName = createGenerateClassName()
+
 /* eslint no-undef: 0 */
 ReactDOM.render(
     <AppContainer>
         <Provider store={store}>
-            <JssProvider jss={jss}>
+            <JssProvider jss={jss} generateClassName={generateClassName}>
                 <MuiThemeProvider theme={theme}>
+                    <CssBaseline />
                     <App />
                 </MuiThemeProvider>
             </JssProvider>

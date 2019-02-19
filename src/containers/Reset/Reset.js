@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import ResetForm from 'components/organisms/ResetForm'
 import SuccessIcon from 'components/atoms/SuccessIcon'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

@@ -1,11 +1,11 @@
-import Button from 'cake-ui-v1/Button'
-import FormControl from 'cake-ui-v1/FormControl'
-import FormHelperText from 'cake-ui-v1/FormHelperText'
+import Button from '@material-ui/core/Button'
+import FormControl from '@material-ui/core/FormControl'
+import FormHelperText from '@material-ui/core/FormHelperText'
 import PropTypes from 'prop-types'
 import React from 'react'
-import TextField from 'cake-ui-v1/TextField'
+import TextField from '@material-ui/core/TextField'
 import classNames from 'classnames'
-import { withStyles } from 'cake-ui-v1/styles'
+import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
     root: {

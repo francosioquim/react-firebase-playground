@@ -1,4 +1,4 @@
-import { createMuiTheme } from 'cake-ui-v1/styles'
+import { createMuiTheme } from '@material-ui/core/styles'
 
 const fontWeightBold = 700
 // const fontWeightSemiBold = 500
@@ -62,6 +62,7 @@ const palette = {
 const theme = createMuiTheme({
     palette,
     spacing,
+    drawerWidth: 240,
     weights: {
         fontWeightBold,
         fontWeightMedium,
