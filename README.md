@@ -1,18 +1,3 @@
-# Crab Cake Entree
-
-[![CircleCI](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master.svg?style=svg&circle-token=d7214399ec2dfeb743c147be61216208f97eed01)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master)
-
-A Cake starter project on steroids!
-
-### Getting Started
-
-```sh
-$ git clone https://github.com/Roamltd/crab-cake-entree.git
-$ cd crab-cake-entree
-$ yarn
-$ yarn start
-```
-
 ### Features
 
 -   Uses [recompose](https://medium.com/@cdelaorden/using-recompose-to-achieve-better-separation-of-concerns-in-react-applications-cf7d30721f59) to achieve better separation of concerns in react applications
