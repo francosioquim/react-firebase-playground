@@ -1,4 +1,5 @@
 # Crab Cake Entree
+
 [![CircleCI](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master.svg?style=svg&circle-token=d7214399ec2dfeb743c147be61216208f97eed01)](https://circleci.com/gh/Roamltd/crab-cake-entree/tree/master)
 
 A Cake starter project on steroids!
@@ -17,8 +18,6 @@ $ yarn start
 -   Uses [recompose](https://medium.com/@cdelaorden/using-recompose-to-achieve-better-separation-of-concerns-in-react-applications-cf7d30721f59) to achieve better separation of concerns in react applications
 -   Uses [Atomic Design](http://atomicdesign.bradfrost.com/) methodology for component structure
 -   Simplified Redux with less overheads using [Modular redux](https://github.com/erikras/ducks-modular-redux)
--   Baked with [Cake-UI v1](https://cakeui.roamcore.com/)
--   CirclCI 2.0 config with private repo login
 -   Out of the box pages (Login, Reset Password, etc. ) with Sauce ready API calls via [Axios](https://www.npmjs.com/package/axios)
 -   Built-in [security](https://stackoverflow.com/questions/244882/what-is-the-best-way-to-implement-remember-me-for-a-website) and session handling
 -   Uses [Formik](https://medium.com/@ilonacodes/why-formik-with-react-e640c1934d6) with asynchronous error handling and feedback
