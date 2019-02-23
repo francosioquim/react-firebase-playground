@@ -1,6 +1,7 @@
 import './styles/index.css'
 import 'typeface-roboto'
 
+import Firebase, { FirebaseContext } from 'components/Firebase'
 import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles'
 
 import App from 'containers/App'
@@ -27,7 +28,9 @@ ReactDOM.render(
             <JssProvider jss={jss} generateClassName={generateClassName}>
                 <MuiThemeProvider theme={theme}>
                     <CssBaseline />
-                    <App />
+                    <FirebaseContext.Provider value={new Firebase()}>
+                        <App />
+                    </FirebaseContext.Provider>
                 </MuiThemeProvider>
             </JssProvider>
         </Provider>

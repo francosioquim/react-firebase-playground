@@ -7,6 +7,7 @@ import GroupDetails from '../GroupDetails'
 import GroupsList from 'containers/GroupsList'
 import Home from 'containers/Home'
 import Login from 'containers/Login'
+import NewGroup from '../NewGroup/NewGroup'
 import NewPassword from 'containers/NewPassword'
 import PageNotFound from 'containers/PageNotFound'
 import React from 'react'
@@ -24,6 +25,7 @@ const App = () => (
                 <FullScreenLayout exact path="/reset" component={Reset} />
                 <DashboardLayout exact path="/home" component={Home} />
                 <DashboardLayout exact path="/groups" component={GroupsList} />
+                <DashboardLayout exact path="/groups/new" component={NewGroup} />
                 <DashboardLayout exact path="/groups/:slug" component={GroupDetails} />
                 <DashboardLayout exact path="/example" component={Example} />
                 <FullScreenLayout exact path="/new-password" component={NewPassword} />

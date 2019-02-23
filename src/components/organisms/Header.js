@@ -142,7 +142,7 @@ class Header extends React.Component {
                     </Toolbar>
                 </AppBar>
                 <Drawer
-                    variant="body1"
+                    variant="temporary"
                     classes={{
                         paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
                     }}

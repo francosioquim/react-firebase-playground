@@ -1,6 +1,6 @@
-import { SAUCE_API_URL, SAUCE_KEY } from 'config'
 import { getAuthorizationHeader, getSauceKeyHeader, saveRefreshToken, saveSessionKey } from 'utils/authentication'
 
+import { API_URL } from 'config'
 import axios from 'axios'
 import errorDispatcher from 'utils/errorDispatcher'
 import idx from 'idx'
@@ -57,12 +57,11 @@ export function loginUser(loginFields) {
 
             await axios
                 .post(
-                    `${SAUCE_API_URL}/session`,
+                    `${API_URL}/session`,
                     {},
                     {
                         headers: {
                             Authorization: `Basic ${Buffer.from(concatCreds).toString('base64')}`,
-                            'X-Sauce-Key': SAUCE_KEY,
                         },
                     }
                 )
@@ -92,12 +91,35 @@ export function loginUser(loginFields) {
     }
 }
 
+export function setAuthUser(authUser) {
+    return async function dispatcher(dispatch) {
+        if (authUser) {
+            const { email, emailVerified, photoUrl, uid, displayName } = authUser
+
+            dispatch({
+                session: {
+                    uid,
+                    displayName,
+                    email,
+                    emailVerified,
+                    photoUrl,
+                },
+                type: API_LOGIN_SUCCESS,
+            })
+        } else {
+            dispatch({
+                type: API_LOGIN_ERROR,
+            })
+        }
+    }
+}
+
 export function logoutUser() {
     return async function dispatcher(dispatch) {
         dispatch({ type: API_LOGOUT_REQUEST })
 
         try {
-            await axios.delete(`${SAUCE_API_URL}/session`, getAuthorizationHeader())
+            await axios.delete(`${API_URL}/session`, getAuthorizationHeader())
             dispatch({ type: API_LOGOUT_SUCCESS })
             removeAll()
             dispatch(push('/login'))
@@ -116,7 +138,7 @@ export function refreshSession(refreshToken) {
 
         try {
             await axios
-                .put(`${SAUCE_API_URL}/session`, { refreshToken }, getSauceKeyHeader())
+                .put(`${API_URL}/session`, { refreshToken }, getSauceKeyHeader())
                 .then((result) => {
                     const { refreshToken: newRefreshToken, token: session } =
                         idx(result, (_) => _.data.data.rows[0]) || null
@@ -149,7 +171,7 @@ export function resetPasswordRequest(email) {
 
         try {
             await axios
-                .post(`${SAUCE_API_URL}/user/password`, { email }, getSauceKeyHeader())
+                .post(`${API_URL}/user/password`, { email }, getSauceKeyHeader())
                 .then((result) => {
                     dispatch({
                         type: API_RESET_REQUEST_SUCCESS,
@@ -173,7 +195,7 @@ export function resetPassword(password, token) {
         try {
             await axios
                 .put(
-                    `${SAUCE_API_URL}/user/password`,
+                    `${API_URL}/user/password`,
                     {
                         token,
                         passwordHash: Buffer.from(password).toString('base64'),

@@ -81,63 +81,57 @@ const theme = createMuiTheme({
 // We can only use typography function such as pxToRem after the createMuiTheme
 // The values are taken from Cake UI Templates file on Roam Design Assets in Abstract
 theme.typography = {
+    useNextVariants: true,
     ...theme.typography,
     fontFamily: "'Roboto', sans-serif",
     fontFamilySecondary: 'ProximaNova, sans-serif',
-    title: {
-        fontSize: theme.typography.pxToRem(40),
-        lineHeight: theme.typography.pxToRem(47),
-        fontWeight: fontWeightRegular,
-    },
-    headline: {
-        fontSize: theme.typography.pxToRem(32),
-        lineHeight: theme.typography.pxToRem(38),
-        fontWeight: fontWeightRegular,
-    },
-    subheading: {
+    subtitle1: {
         fontSize: theme.typography.pxToRem(14),
         lineHeight: theme.typography.pxToRem(38),
         fontWeight: fontWeightRegular,
         textTransform: 'uppercase',
         color: palette.text.primary,
     },
-    caption: {
-        fontSize: theme.typography.pxToRem(12),
-        lineHeight: theme.typography.pxToRem(16),
-        fontWeight: fontWeightRegular,
-        textTransform: 'uppercase',
-        color: palette.text.secondary,
-    },
-    body1: {
+    body2: {
         fontSize: theme.typography.pxToRem(14),
         lineHeight: theme.typography.pxToRem(18),
         fontWeight: fontWeightRegular,
         letterSpacing: theme.typography.pxToRem(0.45),
         fontFamily: 'ProximaNova',
     },
-    body2: {
+    body1: {
         fontSize: theme.typography.pxToRem(14),
         lineHeight: theme.typography.pxToRem(18),
         fontWeight: fontWeightRegular,
     },
-    display1: {
+    h1: {
+        fontSize: theme.typography.pxToRem(40),
+        lineHeight: theme.typography.pxToRem(47),
+        fontWeight: fontWeightRegular,
+    },
+    h2: {
+        fontSize: theme.typography.pxToRem(32),
+        lineHeight: theme.typography.pxToRem(38),
+        fontWeight: fontWeightRegular,
+    },
+    h3: {
         fontSize: theme.typography.pxToRem(24),
         lineHeight: theme.typography.pxToRem(28),
         fontWeight: fontWeightRegular,
     },
     // Taken from the h3 styling of Cake UI Template
-    display2: {
+    h4: {
         fontSize: theme.typography.pxToRem(24),
         lineHeight: theme.typography.pxToRem(28),
         fontWeight: fontWeightBold,
     },
-    display3: {
+    h5: {
         fontSize: theme.typography.pxToRem(15),
         fontWeight: fontWeightRegular,
         lineHeight: theme.typography.pxToRem(18),
         letterSpacing: theme.typography.pxToRem(0.48),
     },
-    display4: {
+    h6: {
         fontSize: theme.typography.pxToRem(16),
         fontWeight: fontWeightRegular,
         lineHeight: theme.typography.pxToRem(18),

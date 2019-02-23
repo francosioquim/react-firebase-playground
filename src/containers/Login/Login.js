@@ -1,7 +1,8 @@
-import LoginForm from 'components/organisms/LoginForm'
 import Logo from 'components/atoms/Logo'
 import PropTypes from 'prop-types'
 import React from 'react'
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
+import firebase from 'firebase'
 import { withStyles } from '@material-ui/core/styles'
 
 export const styles = (theme) => ({
@@ -13,10 +14,10 @@ export const styles = (theme) => ({
     },
 })
 
-const Login = ({ classes, errorMessage, onLogin, hasError }) => (
+const Login = ({ classes, uiConfig }) => (
     <div className={classes.root}>
         <Logo className={classes.logo} />
-        <LoginForm onLogin={onLogin} apiCallError={hasError} errorMessage={errorMessage} />
+        <StyledFirebaseAuth uiConfig={uiConfig} firebaseAuth={firebase.auth()} />
     </div>
 )
 
@@ -25,6 +26,7 @@ Login.propTypes = {
     classes: PropTypes.object.isRequired,
     className: PropTypes.string,
     children: PropTypes.node,
+    uiConfig: PropTypes.object,
     onLogin: PropTypes.func,
     hasError: PropTypes.bool,
     errorMessage: PropTypes.string,

@@ -1,4 +1,4 @@
-import { REFRESH_TOKEN_KEY, SAUCE_KEY, SESSION_KEY } from 'config'
+import { API_KEY, REFRESH_TOKEN_KEY, SESSION_KEY } from 'config'
 import { addToStorage, getFromStorage } from 'utils/localStorage'
 import { decrypt, encrypt } from 'utils/crypto'
 
@@ -39,7 +39,7 @@ export const getAuthorizationHeader = () => {
     return {
         headers: {
             'X-Sauce-Session': getSessionKey(),
-            'X-Sauce-Key': SAUCE_KEY,
+            'X-Sauce-Key': API_KEY,
         },
     }
 }
@@ -47,7 +47,7 @@ export const getAuthorizationHeader = () => {
 export const getSauceKeyHeader = () => {
     return {
         headers: {
-            'X-Sauce-Key': SAUCE_KEY,
+            'X-Sauce-Key': API_KEY,
         },
     }
 }

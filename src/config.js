@@ -1,6 +1,13 @@
-export const SAUCE_API_URL = process.env.REACT_APP_SAUCE_URL
-export const SAUCE_API_VERSION = process.env.REACT_APP_SAUCE_VERSION
-export const SAUCE_KEY = process.env.REACT_APP_SAUCE_KEY
+export const API_URL = process.env.API_URL
+export const API_VERSION = process.env.API_VERSION
+export const API_KEY = process.env.API_KEY
 export const PROJECT_ROLLUP_DELIMITER = '::'
 export const REFRESH_TOKEN_KEY = 'refresh_token'
 export const SESSION_KEY = 'session'
+export const REACT_APP_SECRET = process.env.REACT_APP_SECRET
+export const FIREBASE_API_KEY = process.env.FIREBASE_API_KEY
+export const FIREBASE_AUTH_KEY = process.env.FIREBASE_AUTH_KEY
+export const FIREBASE_DATABASE_URL = process.env.FIREBASE_DATABASE_URL
+export const FIREBASE_PROJECT_ID = process.env.FIREBASE_PROJECT_ID
+export const FIREBASE_STORAGE_BUCKET = process.env.FIREBASE_STORAGE_BUCKET
+export const FIREBASE_MESSAGING_SENDER_ID = process.env.FIREBASE_MESSAGING_SENDER_ID

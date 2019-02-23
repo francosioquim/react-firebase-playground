@@ -16,12 +16,12 @@ function FormHeading(props) {
     return (
         <div className={className}>
             {heading ? (
-                <Typography variant="display2" gutterBottom headlineMapping={{ headline: 'h2' }}>
+                <Typography variant="h2" gutterBottom>
                     {heading}
                 </Typography>
             ) : null}
             {subHeading ? (
-                <Typography variant="body1" gutterBottom>
+                <Typography variant="body2" gutterBottom>
                     {subHeading}
                 </Typography>
             ) : null}

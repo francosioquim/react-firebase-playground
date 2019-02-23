@@ -1,4 +1,3 @@
-import Fab from '@material-ui/core/Fab'
 import GroupsItemList from 'components/organisms/GroupsItemList'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -22,13 +21,9 @@ function GroupsList(props) {
     const { classes, className: classNameProp, groups, handleItemClick } = props
 
     const className = classNames(classes.root, classNameProp)
+
     return (
         <div className={className}>
-            <div className={classes.right}>
-                <Fab size="medium" variant="extended" color="secondary" aria-label="Add" className={classes.fab}>
-                    Start A New Group
-                </Fab>
-            </div>
             <GroupsItemList groups={groups || []} onItemClick={handleItemClick} />
         </div>
     )
@@ -39,6 +34,7 @@ GroupsList.propTypes = {
     className: PropTypes.string,
     groups: PropTypes.array,
     handleItemClick: PropTypes.func,
+    handleCreateGroup: PropTypes.func,
 }
 
 export default withStyles(styles)(GroupsList)

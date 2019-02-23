@@ -38,12 +38,12 @@ function GroupDetails(props) {
             </Grid>
             <Avatar className={classes.avatar} src={groupImage} />
             <Grid item xs={12}>
-                <Typography variant="title" align="center" gutterBottom>
+                <Typography variant="h6" align="center" gutterBottom>
                     {groupName} {slug}
                 </Typography>
             </Grid>
             <Grid item xs={12}>
-                <Typography variant="subheading" align="center" gutterBottom>
+                <Typography variant="subtitle1" align="center" gutterBottom>
                     {groupDescription}
                 </Typography>
             </Grid>

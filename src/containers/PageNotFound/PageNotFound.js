@@ -22,7 +22,7 @@ const PageNotFound = ({ classes }) => (
             <Typography className={classes.label} variant="h1" component="p">
                 404
             </Typography>
-            <Typography variant="body1" gutterBottom>
+            <Typography variant="body2" gutterBottom>
                 You
                 {"'"}
                 ve gone way too far

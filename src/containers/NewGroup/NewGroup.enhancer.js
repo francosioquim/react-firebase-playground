@@ -7,21 +7,18 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 export default compose(
-    setDisplayName('Groups List'),
-    // uncomment below to require authentication
-    // UserIsAuthenticated,
+    setDisplayName('Start a Group'),
+    // mapStateToProps
     connect(
         // mapStateToProps
-        (state) => {
-            return {
-                groups: groupsModule.getGroupList(state),
-            }
+        () => {
+            return {}
         },
         // mapDispatchToProps
         (dispatch) => {
             const actions = {
-                ...routeModule,
                 ...groupsModule,
+                ...routeModule,
             }
 
             return {
@@ -30,15 +27,13 @@ export default compose(
         }
     ),
     lifecycle({
-        componentDidMount() {
-            const { actions } = this.props
-            actions.getGroups()
-        },
+        componentDidUpdate() {},
     }),
     withHandlers({
-        handleItemClick: (props) => (slug) => {
-            console.log(this.props)
-            props.actions.redirect(`/groups/${slug}`)
+        handleCreateGroup: (props) => (values) => {
+            props.actions.createGroup(values)
         },
     })
+    // uncomment below to require authentication
+    // UserIsAuthenticated,
 )

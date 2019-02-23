@@ -33,7 +33,7 @@ export const styles = (theme) => ({
         pointerEvents: 'none',
     },
     select: (props) => {
-        const fontStyle = props.size === 'large' ? theme.typography.headline : theme.typography.body1
+        const fontStyle = props.size === 'large' ? theme.typography.headline : theme.typography.body2
 
         return {
             color: props.color === 'primary' ? theme.palette.primary.main : theme.palette.text.primary,
@@ -111,7 +111,7 @@ class StandaloneSelect extends React.Component {
                 }}
             >
                 {menuTitle && (
-                    <Typography className={classes.header} variant="caption" align="center">
+                    <Typography className={classes.header} variant="subheading" align="center">
                         {menuTitle}
                     </Typography>
                 )}

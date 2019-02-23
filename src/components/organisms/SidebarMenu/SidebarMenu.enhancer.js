@@ -5,12 +5,13 @@ import { compose, pure, withHandlers } from 'recompose'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import withFirebase from 'components/withFirebase'
 
 export default compose(
     connect(
         // mapStateToProps
         () => {
-            return null
+            return {}
         },
         // mapDispatchToProps
         (dispatch) => {
@@ -24,15 +25,23 @@ export default compose(
             }
         }
     ),
+    withFirebase,
     // Handlers
     withHandlers({
         goToGroups: (props) => () => {
             props.actions.redirect('/groups')
             props.onClose()
         },
+        goToNewGroup: (props) => () => {
+            props.actions.redirect('/groups/new')
+            props.onClose()
+        },
         goToHome: (props) => () => {
             props.actions.redirect('/home')
             props.onClose()
+        },
+        logOut: (props) => () => {
+            props.firebase.auth.signOut()
         },
     }),
     pure

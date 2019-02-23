@@ -56,7 +56,7 @@ class AppHeader extends React.PureComponent {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+                    <Typography variant="h4" color="inherit" noWrap className={classes.title}>
                         AppHeader
                     </Typography>
                     <IconButton color="inherit">

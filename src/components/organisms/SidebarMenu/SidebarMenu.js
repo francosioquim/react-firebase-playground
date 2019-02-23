@@ -49,11 +49,11 @@ export const styles = (theme) => ({
 })
 
 function SidebarMenu(props) {
-    const { classes, onClose, open, goToGroups, goToHome } = props
+    const { classes, onClose, open, goToGroups, goToNewGroup, goToHome, logOut } = props
 
     return (
         <Drawer
-            variant="body1"
+            variant="permanent"
             classes={{
                 paper: classNames(classes.drawerPaper, !open && classes.drawerPaperClose),
             }}
@@ -72,6 +72,12 @@ function SidebarMenu(props) {
                             <GroupWorkIcon />
                         </ListItemIcon>
                         <ListItemText primary="My Group" />
+                    </ListItem>
+                    <ListItem button onClick={goToNewGroup}>
+                        <ListItemIcon>
+                            <GroupWorkIcon />
+                        </ListItemIcon>
+                        <ListItemText primary="Start a Group" />
                     </ListItem>
                     <ListItem button onClick={goToGroups}>
                         <ListItemIcon>
@@ -108,7 +114,7 @@ function SidebarMenu(props) {
                         </ListItemIcon>
                         <ListItemText primary="Settings" />
                     </ListItem>
-                    <ListItem button>
+                    <ListItem button onClick={logOut}>
                         <ListItemIcon>
                             <ExitToAppIcon />
                         </ListItemIcon>
@@ -126,7 +132,9 @@ SidebarMenu.propTypes = {
     open: PropTypes.bool,
     onClose: PropTypes.func,
     goToHome: PropTypes.func,
+    goToNewGroup: PropTypes.func,
     goToGroups: PropTypes.func,
+    logOut: PropTypes.func,
 }
 
 SidebarMenu.defaultProps = {}

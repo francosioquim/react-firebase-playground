@@ -1,8 +1,9 @@
-import { address, commerce, helpers, random } from 'faker'
+// import { address, commerce, helpers, random } from 'faker'
 import { find, sortBy } from 'lodash'
 
 import { createSelector } from 'reselect'
 import errorDispatcher from 'utils/errorDispatcher'
+import firebase from 'firebase'
 import initialState from './initialState'
 import { schema } from 'normalizr'
 
@@ -23,16 +24,6 @@ export default function groupReducer(state = initialState.groups, action) {
     }
 }
 
-const delay = (duration) => {
-    return function() {
-        return new Promise(function(resolve) {
-            setTimeout(function() {
-                resolve()
-            }, duration)
-        })
-    }
-}
-
 export const getGroupList = createSelector([(state) => state.groups], (groups) => {
     return groups ? sortBy(Object.values(groups), ['description', 'name']) : []
 })
@@ -46,13 +37,42 @@ export const getGroupBySlug = createSelector([getGroupList, (state, slug) => slu
     return groups && groups.length ? find(groups, (group) => group.slug === slug) : undefined
 })
 
+export const createGroup = (values) => {
+    return async function dispatcher(dispatch) {
+        dispatch({ type: API_GET_GROUPS_REQUEST })
+
+        try {
+            const db = firebase.firestore()
+            const query = await db.collection('groups').add({
+                name: values.name,
+                description: values.description,
+            })
+            console.log(query)
+            /* 
+            dispatch({
+                type: API_GET_GROUPS_SUCCESS,
+                result,
+            })
+            */
+        } catch (error) {
+            console.error(error)
+            errorDispatcher(error, API_GET_GROUPS_ERROR, dispatch)
+        }
+    }
+}
+
 export const getGroups = () => {
     return async function dispatcher(dispatch) {
         dispatch({ type: API_GET_GROUPS_REQUEST })
 
         try {
-            await delay(2000)
+            const db = firebase.firestore()
             const result = []
+            const querySnapshot = await db.collection('groups').get()
+            querySnapshot.forEach((doc) => {
+                result.push(doc.data())
+            })
+            /* 
             for (let index = 0; index < 48; index++) {
                 const name = `${commerce.productAdjective()} ${commerce.department()}`
                 result.push({
@@ -61,13 +81,14 @@ export const getGroups = () => {
                     id: random.uuid(),
                     slug: helpers.slugify(name),
                 })
-            }
+            } */
 
             dispatch({
                 type: API_GET_GROUPS_SUCCESS,
                 result,
             })
         } catch (error) {
+            console.error(error)
             errorDispatcher(error, API_GET_GROUPS_ERROR, dispatch)
         }
     }
