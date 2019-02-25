@@ -7,7 +7,6 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import idx from 'idx'
 import { matchPath } from 'react-router'
-import { random } from 'faker'
 
 export default compose(
     setDisplayName('GroupDetails'),
@@ -23,6 +22,7 @@ export default compose(
             const slug = idx(match, (_) => _.params.slug) || ''
             return {
                 group: groupsModule.getGroupBySlug(state, slug),
+                authUser: state.user.session,
             }
         },
         // mapDispatchToProps
@@ -46,11 +46,11 @@ export default compose(
         },
     }),
     mapProps((ownProps) => {
+        const groupOwnerUid = idx(ownProps, (_) => _.group.ownerUid)
+        const authUserUid = idx(ownProps, (_) => _.authUser.uid)
         return {
             ...ownProps,
-            groupName: idx(ownProps, (_) => _.group.name) || '',
-            groupDescription: idx(ownProps, (_) => _.group.description) || '',
-            groupImage: random.image(),
+            isGroupOwner: groupOwnerUid && authUserUid && groupOwnerUid === authUserUid,
         }
     })
     // uncomment below to require authentication

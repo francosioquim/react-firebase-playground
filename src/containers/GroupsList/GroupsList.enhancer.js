@@ -37,7 +37,6 @@ export default compose(
     }),
     withHandlers({
         handleItemClick: (props) => (slug) => {
-            console.log(this.props)
             props.actions.redirect(`/groups/${slug}`)
         },
     })

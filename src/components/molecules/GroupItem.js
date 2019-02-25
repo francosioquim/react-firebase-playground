@@ -12,13 +12,13 @@ export const styles = () => ({
     },
 })
 function GroupItem(props) {
-    const { avatar, classes, className: classNameProp, name, description, onItemClick, slug } = props
+    const { avatar, classes, className: classNameProp, group, onItemClick } = props
 
     const className = classNames(classes.root, classNameProp)
 
     const handleClick = () => {
         if (onItemClick) {
-            onItemClick(slug)
+            onItemClick(group.slug || 'error')
         }
     }
 
@@ -26,7 +26,7 @@ function GroupItem(props) {
         <Grid item xs={12} sm={6} md={4} xl={3}>
             <ListItem className={className} onClick={handleClick}>
                 {avatar}
-                <ListItemText primary={name} secondary={description} />
+                <ListItemText primary={group.name} secondary={group.state} />
             </ListItem>
         </Grid>
     )
@@ -36,10 +36,8 @@ GroupItem.propTypes = {
     avatar: PropTypes.node,
     classes: PropTypes.object.isRequired,
     className: PropTypes.string,
-    description: PropTypes.string,
-    name: PropTypes.string,
     onItemClick: PropTypes.func,
-    slug: PropTypes.string,
+    group: PropTypes.object,
 }
 
 export default withStyles(styles)(GroupItem)

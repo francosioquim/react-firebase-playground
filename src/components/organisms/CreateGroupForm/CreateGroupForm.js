@@ -33,31 +33,15 @@ const CreateGroupForm = ({
     errorMessage,
     errors,
     handleFieldChange,
+    handleLocationChange,
     hasFieldError,
     isSubmitting,
     handleFormSubmit,
+    usStates,
     status,
     values,
 }) => {
     const className = classNames(classes.root, classNameProp)
-    const currencies = [
-        {
-            value: 'USD',
-            label: '$',
-        },
-        {
-            value: 'EUR',
-            label: '€',
-        },
-        {
-            value: 'BTC',
-            label: '฿',
-        },
-        {
-            value: 'JPY',
-            label: '¥',
-        },
-    ]
     return (
         <div className={className}>
             {status === FORM_ACTION_ERROR_STATUS && errorMessage ? (
@@ -85,21 +69,21 @@ const CreateGroupForm = ({
                     <TextField
                         id="location"
                         name="location"
-                        label="Location"
+                        label="State"
                         select
                         value={values.location}
                         className={classes.textField}
-                        onChange={handleFieldChange}
+                        onChange={handleLocationChange}
                         error={hasFieldError('location')}
                         SelectProps={{
                             MenuProps: {
                                 className: classes.menu,
                             },
                         }}
-                        helperText="Please select your currency"
+                        helperText="Please select your state"
                         margin="normal"
                     >
-                        {currencies.map((option) => (
+                        {usStates.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
                                 {option.label}
                             </MenuItem>
@@ -149,12 +133,15 @@ CreateGroupForm.propTypes = {
     errors: PropTypes.object,
     handleCheckboxChange: PropTypes.func,
     handleFieldChange: PropTypes.func,
+    handleLocationChange: PropTypes.func,
+    onLocationChange: PropTypes.func,
     hasFieldError: PropTypes.func,
     handleFormSubmit: PropTypes.func,
     isSubmitting: PropTypes.bool,
     rememberMe: PropTypes.bool,
     onCreate: PropTypes.func,
     status: PropTypes.string,
+    usStates: PropTypes.array,
     values: PropTypes.object,
 }
 

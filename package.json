@@ -14,6 +14,7 @@
         "firebase": "5.8.0",
         "firebaseui": "^3.5.2",
         "formik": "^1.3.0",
+        "google-map-react": "^1.1.2",
         "history": "^4.7.2",
         "idx": "^2.4.0",
         "jss": "^9.8.7",
@@ -38,8 +39,12 @@
         "redux-immutable-state-invariant": "^2.1.0",
         "redux-thunk": "^2.3.0",
         "reselect": "^4.0.0",
+        "slugify": "^1.3.4",
         "store2": "^2.7.0",
-        "typeface-roboto": "^0.0.54"
+        "typeface-poppins": "^0.0.54",
+        "typeface-roboto": "^0.0.54",
+        "usa-states": "^0.0.5",
+        "zipcodes": "^8.0.0"
     },
     "devDependencies": {
         "@babel/runtime": "^7.0.0-beta.53",

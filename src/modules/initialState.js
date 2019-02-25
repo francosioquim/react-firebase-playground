@@ -4,8 +4,9 @@ import { initialProgressState } from 'utils/progress'
 const initialState = {
     user: {
         session: getSessionKey() || null,
+        ownGroups: [],
     },
-    groups: null,
+    groups: [],
     progress: {
         getGroups: initialProgressState,
     },

@@ -25,8 +25,7 @@ function GroupsItemList(props) {
                         ? groups.map((group, index) => (
                               <GroupItem
                                   key={index}
-                                  slug={group.slug}
-                                  name={group.name}
+                                  group={group}
                                   description={group.description}
                                   onItemClick={onItemClick}
                                   avatar={<Avatar src={random.image()} />}

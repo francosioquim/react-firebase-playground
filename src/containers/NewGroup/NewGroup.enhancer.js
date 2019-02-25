@@ -1,13 +1,13 @@
 import * as groupsModule from 'modules/groups'
 import * as routeModule from 'modules/route'
 
-import { compose, lifecycle, setDisplayName, withHandlers } from 'recompose'
+import { compose, pure, setDisplayName, withHandlers } from 'recompose'
 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
 export default compose(
-    setDisplayName('Start a Group'),
+    setDisplayName('NewGroup'),
     // mapStateToProps
     connect(
         // mapStateToProps
@@ -26,14 +26,12 @@ export default compose(
             }
         }
     ),
-    lifecycle({
-        componentDidUpdate() {},
-    }),
     withHandlers({
         handleCreateGroup: (props) => (values) => {
             props.actions.createGroup(values)
         },
-    })
+    }),
+    pure
     // uncomment below to require authentication
     // UserIsAuthenticated,
 )

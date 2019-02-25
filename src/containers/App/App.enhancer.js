@@ -40,15 +40,5 @@ export default compose(
                 actions.setAuthUser(authUser)
             })
         },
-        /*
-    componentDidUpdate(prevProps, prevState, snapshot) {
-      // This is also a good place to do network requests as long as you compare the current props to previous props
-    },
-    */
-        /*
-    componentDidCatch(error, info) {
-      // handleError here
-    }
-    */
     })
 )

@@ -29,6 +29,10 @@ export const API_REFRESH_SESSION_REQUEST = 'API_REFRESH_SESSION_REQUEST'
 export const API_REFRESH_SESSION_SUCCESS = 'API_REFRESH_SESSION_SUCCESS'
 export const API_REFRESH_SESSION_ERROR = 'API_REFRESH_SESSION_ERROR'
 
+export const API_SET_OWN_GROUP_REQUEST = 'API_SET_OWN_GROUP_REQUEST'
+export const API_SET_OWN_GROUP_SUCCESS = 'API_SET_OWN_GROUP_SUCCESS'
+export const API_SET_OWN_GROUP_ERROR = 'API_SET_OWN_GROUP_ERROR'
+
 export default function userReducer(state = initialState.user, action) {
     switch (action.type) {
         case API_LOGIN_REQUEST:
@@ -43,6 +47,13 @@ export default function userReducer(state = initialState.user, action) {
             return { ...state, session: action.session }
         case API_LOGOUT_ERROR:
             return { ...state, session: null, errorMessage: action.message }
+        case API_SET_OWN_GROUP_SUCCESS:
+            return {
+                ...state,
+                ownGroups: Array.from(new Set([...state.ownGroups, action.ownGroups])),
+            }
+        case API_SET_OWN_GROUP_ERROR:
+            return { ...state, ownGroups: null, errorMessage: action.message }
         default:
             return state
     }

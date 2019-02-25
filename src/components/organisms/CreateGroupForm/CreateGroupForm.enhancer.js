@@ -1,6 +1,8 @@
 import { FORM_ACTION_ERROR_STATUS, FORM_PROGRESS_STATUS, FORM_SUBMIT_STATUS } from 'constants/form'
-import { compose, lifecycle, withHandlers, withStateHandlers } from 'recompose'
+import { compose, lifecycle, mapProps, withHandlers, withStateHandlers } from 'recompose'
 
+import { UsaStates } from 'usa-states'
+import { find } from 'lodash'
 import { required } from 'utils/validation'
 import { withFormik } from 'formik'
 
@@ -43,6 +45,13 @@ export default compose(
             }),
         }
     ),
+    mapProps((ownProps) => {
+        const usStates = new UsaStates()
+        return {
+            ...ownProps,
+            usStates: usStates.states.map((usState) => ({ value: usState.name, label: usState.name })),
+        }
+    }),
     // Handlers
     withHandlers({
         handleFieldChange: (props) => (event) => {
@@ -55,8 +64,13 @@ export default compose(
             props.handleSubmit(event)
         },
         handleLocationChange: (props) => (event) => {
-            props.setFieldValue('location', event.target.checked)
-            props.handleSubmit(event)
+            // test
+            props.setStatus(FORM_PROGRESS_STATUS)
+            if (props.onLocationChange) {
+                const usStates = new UsaStates()
+                props.onLocationChange(find(usStates.states, (usState) => usState.name === event.target.value))
+            }
+            props.handleChange(event)
         },
         hasFieldError: (props) => (fieldName) => {
             return !!(props.errors[fieldName] && props.errors[fieldName].length && props.status === FORM_SUBMIT_STATUS)

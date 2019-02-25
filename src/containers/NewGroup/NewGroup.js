@@ -10,9 +10,10 @@ export const styles = () => ({
     },
 })
 
-function GroupDetails(props) {
+function NewGroup(props) {
     const { classes, className: classNameProp, handleCreateGroup } = props
     const className = classNames(classes.root, classNameProp)
+
     return (
         <div className={className}>
             <CreateGroupForm onCreate={handleCreateGroup} />
@@ -20,10 +21,10 @@ function GroupDetails(props) {
     )
 }
 
-GroupDetails.propTypes = {
+NewGroup.propTypes = {
     classes: PropTypes.object.isRequired,
     className: PropTypes.string,
     handleCreateGroup: PropTypes.func,
 }
 
-export default injectSheet(styles)(GroupDetails)
+export default injectSheet(styles)(NewGroup)

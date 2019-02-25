@@ -71,6 +71,7 @@ const theme = createMuiTheme({
     status: {
         danger: 'orange',
     },
+    background: `linear-gradient(45deg, #ffa500 30%, #FF8E53 90%)`,
     props: {
         MuiWithWidth: {
             initialWidth: 'xs',
@@ -83,7 +84,7 @@ const theme = createMuiTheme({
 theme.typography = {
     useNextVariants: true,
     ...theme.typography,
-    fontFamily: "'Roboto', sans-serif",
+    fontFamily: "'Poppins', sans-serif",
     fontFamilySecondary: 'ProximaNova, sans-serif',
     subtitle1: {
         fontSize: theme.typography.pxToRem(14),

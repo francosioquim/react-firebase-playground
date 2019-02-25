@@ -13,6 +13,7 @@ import { withStyles } from '@material-ui/core/styles'
 export const styles = (theme) => ({
     appBar: {
         zIndex: theme.zIndex.drawer + 1,
+        background: theme.background,
         transition: theme.transitions.create(['width', 'margin'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,

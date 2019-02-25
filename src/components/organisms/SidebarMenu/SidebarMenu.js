@@ -49,8 +49,8 @@ export const styles = (theme) => ({
 })
 
 function SidebarMenu(props) {
-    const { classes, onClose, open, goToGroups, goToNewGroup, goToHome, logOut } = props
-
+    const { classes, onClose, open, getGroupsProgress, goToGroups, goToNewGroup, goToHome, group, logOut } = props
+    console.log(group)
     return (
         <Drawer
             variant="permanent"
@@ -67,18 +67,23 @@ function SidebarMenu(props) {
             <Divider />
             <List>
                 <div>
-                    <ListItem button onClick={goToHome}>
-                        <ListItemIcon>
-                            <GroupWorkIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="My Group" />
-                    </ListItem>
-                    <ListItem button onClick={goToNewGroup}>
-                        <ListItemIcon>
-                            <GroupWorkIcon />
-                        </ListItemIcon>
-                        <ListItemText primary="Start a Group" />
-                    </ListItem>
+                    {group && (
+                        <ListItem button onClick={goToHome}>
+                            <ListItemIcon>
+                                <GroupWorkIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={group.name} />
+                        </ListItem>
+                    )}
+                    {!group &&
+                        getGroupsProgress.hasLoaded && (
+                            <ListItem button onClick={goToNewGroup}>
+                                <ListItemIcon>
+                                    <GroupWorkIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Start a Group" />
+                            </ListItem>
+                        )}
                     <ListItem button onClick={goToGroups}>
                         <ListItemIcon>
                             <PeopleIcon />
@@ -131,6 +136,8 @@ SidebarMenu.propTypes = {
     className: PropTypes.string,
     open: PropTypes.bool,
     onClose: PropTypes.func,
+    getGroupsProgress: PropTypes.object,
+    group: PropTypes.object,
     goToHome: PropTypes.func,
     goToNewGroup: PropTypes.func,
     goToGroups: PropTypes.func,

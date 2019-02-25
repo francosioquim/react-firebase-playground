@@ -1,5 +1,5 @@
 import './styles/index.css'
-import 'typeface-roboto'
+import 'typeface-poppins'
 
 import Firebase, { FirebaseContext } from 'components/Firebase'
 import { MuiThemeProvider, createGenerateClassName } from '@material-ui/core/styles'
